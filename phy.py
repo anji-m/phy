@@ -17,8 +17,8 @@ font = {
 }
 
 host.set_xlabel("Months", fontdict=font)
-host.set_ylabel("Weight", fontdict=font)
-para.set_ylabel("Height", fontdict=font)
+host.set_ylabel("Weight (kg)", fontdict=font)
+para.set_ylabel("Height (cm)", fontdict=font)
 
 months = np.array([2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
 
