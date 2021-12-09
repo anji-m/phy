@@ -28,17 +28,25 @@ weight_l = np.array([6.8, 7.7, 8.5, 9.2, 9.8, 10.3, 10.8, 11.3, 11.7, 12.0, 12.4
 height_s = np.array([52.9, 55.8, 58.3, 60.5, 62.4, 64.1, 65.7, 67.0, 68.3, 69.6, 70.7])
 height_l = np.array([63.2, 66.4, 69.1, 71.3, 73.2, 74.8, 76.3, 77.3, 78.9, 80.2, 81.5])
 
+months_anji = np.array([2])
+weight_anji = np.array([5.1])
+height_anji = np.array([59.0])
+
 with plt.style.context('fivethirtyeight'):
-    pw_s, = host.plot(months, weight_s, color="#ff8c00", label="Weight")
-    pw_l, = host.plot(months, weight_l, color="#ff8c00")
-    ph_s, = para.plot(months, height_s, color="#436eee", label="Height")
-    ph_l, = para.plot(months, height_l, color="#436eee")
+    pw_s, = host.plot(months, weight_s, color="#ff8c00", linestyle=":")
+    pw_l, = host.plot(months, weight_l, color="#ff8c00", linestyle=":")
+    pw_anji, = host.plot(months_anji, weight_anji, color="#ff8c00", marker="o", ms=10, label="Weight")
+
+    ph_s, = para.plot(months, height_s, color="#436eee", linestyle=":")
+    ph_l, = para.plot(months, height_l, color="#436eee", linestyle=":")
+    ph_anji, = para.plot(months_anji, height_anji, color="#436eee", marker="o", ms=10, label="Height")
+
     legd = plt.legend()
 
 host.yaxis.get_label().set_color(pw_s.get_color())
 host.set_xticks([2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
-host.set_yticks([3., 3.5, 4., 4.5, 5., 5.5, 6., 6.5, 7., 7.5,
-                 8., 8.5, 9., 9.5, 10., 10.5, 11., 11.5, 12., 12.5])
+host.set_yticks([3., 3.5, 4., 4.5, 5., 5.5, 6., 6.5, 7., 7.5, 8., 8.5, 9., 9.5,
+                 10., 10.5, 11., 11.5, 12., 12.5, 13., 13.5, 14., 14.5, 15., 15.5, 16.])
 legd.texts[0].set_color(pw_s.get_color())
 
 para.yaxis.get_label().set_color(ph_s.get_color())
