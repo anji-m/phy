@@ -41,7 +41,13 @@ with plt.style.context('fivethirtyeight'):
     ph_l, = para.plot(months, height_l, color="#436eee", linestyle=":")
     ph_anji, = para.plot(months_anji, height_anji, color="#436eee", marker="o", ms=10, label="Height")
 
-    legd = plt.legend()
+    for m, w in zip(months_anji, weight_anji):
+        host.annotate(f"{w:.1f}", (m, w), textcoords="offset points", xytext=(0, 10), ha="center")
+
+    for m, h in zip(months_anji, height_anji):
+        para.annotate(f"{h:.1f}", (m, h), textcoords="offset points", xytext=(0, 10), ha="center")
+
+    legd = plt.legend(loc="upper left")
 
 host.yaxis.get_label().set_color(pw_s.get_color())
 host.set_xticks([2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
