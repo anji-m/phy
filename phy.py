@@ -28,9 +28,9 @@ weight_l = np.array([6.8, 7.7, 8.5, 9.2, 9.8, 10.3, 10.8, 11.3, 11.7, 12.0, 12.4
 height_s = np.array([52.9, 55.8, 58.3, 60.5, 62.4, 64.1, 65.7, 67.0, 68.3, 69.6, 70.7])
 height_l = np.array([63.2, 66.4, 69.1, 71.3, 73.2, 74.8, 76.3, 77.3, 78.9, 80.2, 81.5])
 
-months_anji = np.array([2, 3])
-weight_anji = np.array([5.1, 6.5])
-height_anji = np.array([59.0, 65.0])
+months_anji = np.array([2, 3, 4])
+weight_anji = np.array([5.1, 6.5, 7.0])
+height_anji = np.array([59.0, 65.0, 66.0])
 
 with plt.style.context('fivethirtyeight'):
     pw_s, = host.plot(months, weight_s, color="#ff8c00", linestyle=":")
