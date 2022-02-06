@@ -11,14 +11,20 @@ figure(figsize=(19, 14), dpi=80)
 host = host_subplot(111)
 para = host.twinx()
 
+# better confirm which chinese fonts are supported on the system, try
+#
+# fc-list :lang=zh --format="%{family[0]}\n"
+#
+# then choose one as font.family below
 font = {
+    'family': 'Droid Sans Fallback',
     'weight': 'bold',
     'size': 18,
 }
 
-host.set_xlabel("Months", fontdict=font)
-host.set_ylabel("Weight (kg)", fontdict=font)
-para.set_ylabel("Height (cm)", fontdict=font)
+host.set_xlabel("月龄", fontdict=font)
+host.set_ylabel("体重 （千克）", fontdict=font)
+para.set_ylabel("身高 （厘米）", fontdict=font)
 
 months = np.array([2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
 
@@ -59,6 +65,12 @@ para.yaxis.get_label().set_color(ph_s.get_color())
 para.set_yticks([0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85])
 legd.texts[1].set_color(ph_s.get_color())
 
-plt.title("Anji's Physical Growth", fontdict={'fontsize': 24, 'fontweight': 'bold'})
+plt.title("成长中的安吉",
+          fontdict={
+              'family': 'Droid Sans Fallback',
+              'fontsize': 24,
+              'fontweight': 'bold',
+          }
+)
 
 plt.savefig('phy.png')
